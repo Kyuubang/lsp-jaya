@@ -1,4 +1,5 @@
 *.pyc
+.vagrant
 *.DS_Store
 *.egg*
 /dist/
@@ -12,4 +13,5 @@ env
 #src
 *.sqlite*
 
+venv
 .env

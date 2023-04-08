@@ -1,0 +1,112 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid py-4">
+
+    {% include "includes/infos.html" %}
+
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <div class="d-flex">
+                            <div class="d-flex align-items-center">
+                                <h6 class="text-dark font-weight-bolder">Medicine</h6>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-icon btn-2 btn-success" type="button">
+                                    <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Name
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Unit/Class
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Brand
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Type
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Price
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Stock
+                                    </th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-3 py-1">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm">Paracetamol</h6>
+                                                <p class="text-uppercase text-xs text-secondary mb-0">PRCMTL-08</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex px-0 py-1">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm">Herbal</h6>
+                                                <p class="text-xs text-secondary mb-0">Halal</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <p class="text-xs font-weight-bold mb-0">Kimia Farma</p>
+                                    </td>
+                                    <td class="align-middle">
+                                        <p class="text-xs font-weight-bold mb-0">Tablet</p>
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="numbers">
+                                            <span class="text-xs font-weight-bold mb-0">Rp. </span>
+                                            <span class="text-xs font-weight-bold mb-0">10000</span>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="numbers">
+                                            <span class="text-xs font-weight-bold mb-0">100</span>
+                                            <span class="text-xs font-weight-bold mb-0">pcs</span>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle ">
+                                        <span class="text-secondary text-sm font-weight-bold">
+                                            <a href="javascript;;">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </span>
+
+                                        <span class="text-secondary text-sm font-weight-bold px-3">
+                                            <a href="javascript;;">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "includes/footer.html" %}
+    </div>
+    {% endblock %}
+

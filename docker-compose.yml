@@ -3,10 +3,20 @@ services:
   appseed-app:
     container_name: appseed_app
     restart: always
-    build: .
+    image: "bayhaqisptr/lsp-jaya:dev"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=appseed
+      - DB_USER=appseed
+      - DB_PASS=appseed
+      - DB_ENGINE=mysql
     networks:
       - db_network
       - web_network
+    depends_on:
+      - db
+
   nginx:
     container_name: nginx
     restart: always
@@ -17,11 +27,32 @@ services:
       - ./nginx:/etc/nginx/conf.d
     networks:
       - web_network
-    depends_on: 
+    depends_on:
       - appseed-app
+  db:
+    container_name: db-mysql
+    restart: always
+    image: "mysql:8.0"
+    ports:
+      - "3306:3306"
+    networks:
+      - db_network
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appseed
+      MYSQL_USER: appseed
+      MYSQL_PASSWORD: appseed
+
+
 networks:
   db_network:
     driver: bridge
   web_network:
     driver: bridge
+
+volumes:
+  db_data:
+    driver: local
  
